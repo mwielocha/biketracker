@@ -77,4 +77,5 @@ flycheck_*.el
 # projectiles files
 .projectile
 
-
+node_modules
+bundle.js
