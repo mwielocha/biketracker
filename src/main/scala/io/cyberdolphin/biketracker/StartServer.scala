@@ -42,7 +42,7 @@ object StartServer extends App {
       }
     } ~ pathPrefix("api") {
       (path("config") & get) {
-        complete { appConfig }
+        complete { appConfig.client }
       } ~ (path("tracks") & get) {
         complete {
           File(appConfig.gpxDir).list.filter(
