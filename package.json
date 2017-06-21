@@ -1,18 +1,19 @@
 {
-  "name": "biketracker-frontend",
+  "name": "biketracker",
   "version": "1.0.0",
   "description": "",
   "main": "src/main/js/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "watchify index.js --outfile bundle.js",
-    "build": "browserify index.js | uglifyjs --compress --output src/main/resources/assets/js/bundle.js"
+    "start": "watchify src/main/js/index.js --outfile bundle.js",
+    "build": "browserify src/main/js/index.js | uglifyjs --compress --output src/main/resources/assets/js/bundle.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "browserify": "^14.4.0",
     "copyfiles": "^1.2.0",
+    "jquery": "^3.2.1",
     "openlayers": "^4.2.0",
     "uglify-js": "^3.0.18",
     "watchify": "^3.9.0"

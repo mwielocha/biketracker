@@ -32,7 +32,15 @@ object StartServer extends App {
     import FailFastCirceSupport._
     import io.circe.generic.auto._
 
-    pathPrefix("api") {
+    (path("") & get) {
+      getFromResource("assets/html/index.html")
+    } ~ pathPrefix("assets") {
+      path("css" / Segment) { asset =>
+        getFromResource(s"assets/css/$asset")
+      } ~ path("js" / Segment) { asset =>
+        getFromResource(s"assets/js/$asset")
+      }
+    } ~ pathPrefix("api") {
       (path("config") & get) {
         complete { appConfig }
       } ~ (path("tracks") & get) {
