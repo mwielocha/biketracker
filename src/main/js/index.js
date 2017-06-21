@@ -94,8 +94,8 @@ function display(config, tracks) {
     // selected features
     var extent = dragBox.getGeometry().getExtent();
     
-    for(let layer of layers) {
-      layer.getSource().forEachFeatureIntersectingExtent(extent, function(feature) {
+    for(i = 0; i < layers.length; i++) {
+      layers[i].getSource().forEachFeatureIntersectingExtent(extent, function(feature) {
         selectedFeatures.push(feature);
       });
       if(selectedFeatures.getLength() > 0) break;
