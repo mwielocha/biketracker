@@ -1,3 +1,4 @@
+import com.typesafe.sbt.packager.archetypes.ServerLoader
 
 // Generated with scalagen
 
@@ -24,4 +25,18 @@ libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-http-testkit" % akkaHttpVersion % Test,
   "org.scalatest" %% "scalatest" % "3.0.0" % Test
 )
+
+assemblyMergeStrategy in assembly := {
+  case x if x.endsWith("io.netty.versions.properties") => MergeStrategy.discard
+  case x if x.endsWith("reference.conf") => MergeStrategy.concat
+  case x => (assemblyMergeStrategy in assembly).value(x)
+}
+
+maintainer := "Mikolaj Wielocha <mwielocha@icloud.com>"
+
+packageSummary := "Biketracker"
+
+packageDescription := "Biketracker"
+
+serverLoading := ServerLoader.Upstart
 
