@@ -14,6 +14,8 @@ val akkaHttpVersion = "10.0.8"
 val circeVersion = "0.8.0"
 
 libraryDependencies ++= Seq(
+  "com.github.pureconfig" %% "pureconfig" % "0.7.2",
+  "com.github.pathikrit"  %% "better-files" % "3.0.0",
   "com.typesafe.akka" %% "akka-http" % akkaHttpVersion,
   "de.heikoseeberger" %% "akka-http-circe" % "1.17.0",
   "io.circe" %% "circe-core" % circeVersion,
