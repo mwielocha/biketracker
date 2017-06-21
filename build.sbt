@@ -7,7 +7,7 @@ lazy val root = (project in file(".")).
     name := "biketracker",
     version := "1.0",
     scalaVersion := "2.12.2"
-  )
+  ).enablePlugins(JavaServerAppPackaging)
 
 mainClass in (Compile, run) := Some("io.cyberdolphin.biketracker.StartServer")
 
