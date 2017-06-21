@@ -2,11 +2,11 @@
   "name": "biketracker-frontend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/main/js/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "watchify index.js --outfile bundle.js",
-    "build": "browserify index.js | uglifyjs --compress --output bundle.js && copyfiles bundle.js ../resources/assets/js/bundle.js"
+    "build": "browserify index.js | uglifyjs --compress --output src/main/resources/assets/js/bundle.js"
   },
   "author": "",
   "license": "ISC",
