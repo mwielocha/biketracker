@@ -34,7 +34,7 @@ assemblyMergeStrategy in assembly := {
 
 mappings in Universal += {
     val conf = (resourceDirectory in Compile).value / "reference.conf"
-    conf -> "conf/reference.conf"
+    conf -> "conf/application.conf"
 }
 
 bashScriptExtraDefines += """addJava "-Dconfig.file=${app_home}/../conf/application.conf""""
