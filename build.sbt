@@ -32,6 +32,13 @@ assemblyMergeStrategy in assembly := {
   case x => (assemblyMergeStrategy in assembly).value(x)
 }
 
+mappings in Universal += {
+    val conf = (resourceDirectory in Compile).value / "reference.conf"
+    conf -> "conf/reference.conf"
+}
+
+bashScriptExtraDefines += """addJava "-Dconfig.file=${app_home}/../conf/application.conf""""
+
 maintainer := "Mikolaj Wielocha <mwielocha@icloud.com>"
 
 packageSummary := "Biketracker"
