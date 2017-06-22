@@ -79,3 +79,4 @@ flycheck_*.el
 
 node_modules
 bundle.js
+application.conf
